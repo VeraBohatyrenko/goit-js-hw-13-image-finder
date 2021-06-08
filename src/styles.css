@@ -1,0 +1,133 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /*
+   * CSS image reference example.
+   */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+
+.search-box {
+  display: block;
+  width: 100%;
+}
+
+.load-more-box {
+  display: block;
+  width: 100%;
+}
+
+.load-more {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+}
+.input-form {
+  padding: 5px 10px;
+  /* margin: 10px 20px; */
+  border-radius: 30px;
+  /* background-image: linear-gradient(
+    45deg,
+    #6ab1d7 0%,
+    #33d9de 50%,
+    #002878 100%
+  ); */
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+  box-shadow: 0 16px 32px 0 rgba(0, 40, 120, 0.35);
+  transition: 0.5s;
+}
+.button {
+  display: block;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+/* .button:hover {
+  box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
+  background-position: 0 0;
+} */
+
+.button.is-hidden {
+  display: none;
+}
+
+.button > .spinner.is-hidden {
+  display: none;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stats-item {
+  border-radius: 10px;
+  padding: 5px;
+  color: blue;
+  border: groove;
+}
+.list-image {
+  list-style: none;
+  margin-left: 30px;
+  flex-basis: calc(33.3333% - 30px);
+}
+
+.card-image {
+  display: block;
+  max-width: 100%;
+  height: 320px;
+  /* object-fit: cover; */
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
