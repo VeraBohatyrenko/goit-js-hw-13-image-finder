@@ -46,14 +46,7 @@ img {
 }
 .input-form {
   padding: 5px 10px;
-  /* margin: 10px 20px; */
   border-radius: 30px;
-  /* background-image: linear-gradient(
-    45deg,
-    #6ab1d7 0%,
-    #33d9de 50%,
-    #002878 100%
-  ); */
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -63,13 +56,15 @@ img {
 }
 .button {
   display: block;
-  /* margin-left: auto;
-  margin-right: auto; */
+  padding: 5px 10px;
+  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: black;
+  box-shadow: 0 16px 32px 0 rgba(0, 40, 120, 0.35);
+  transition: 0.5s;
 }
-/* .button:hover {
-  box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
-  background-position: 0 0;
-} */
 
 .button.is-hidden {
   display: none;
