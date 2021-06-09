@@ -6,14 +6,17 @@ import LoadMoreBtn from "./js/load-more-Btn";
 const refs = {
   searchForm: document.querySelector("#search-form"),
   gallery: document.querySelector(".gallery"),
+  // loadMoreBtn: document.querySelector('[data-action="load-more"]'),
 };
-console.log(refs.gallery);
 
-const pixabayApiService = new PixabayApiService();
 const loadMoreBtn = new LoadMoreBtn({
   selector: '[data-action="load-more"]',
   hidden: true,
 });
+const pixabayApiService = new PixabayApiService();
+
+// LoadMoreBtn.show();
+// LoadMoreBtn.disable();
 
 refs.searchForm.addEventListener("submit", onSearch);
 loadMoreBtn.refs.button.addEventListener("click", onLoadMore);
@@ -27,29 +30,30 @@ function onSearch(e) {
     return alert("Sorry, you need to enter search text");
   }
   loadMoreBtn.show();
-  loadMoreBtn.disable();
   pixabayApiService.resetPage();
+  clearGallery();
+  loadMoreBtn.disable();
   pixabayApiService.fetchArticles().then((hits) => {
-    clearGallery();
-    appendLiItemMarkup(hits);
+    appendHitsMarkup(hits);
     loadMoreBtn.enable();
   });
 }
 
-async function onLoadMore(e) {
+function onLoadMore(e) {
   loadMoreBtn.disable();
-  const result = await pixabayApiService.fetchArticles();
-  appendLiItemMarkup(result);
-  loadMoreBtn.enable();
+  pixabayApiService.fetchArticles().then((hits) => {
+    appendHitsMarkup(hits);
+    loadMoreBtn.enable();
 
-  window.scrollTo({
-    top: e.pageY,
-    left: 0,
-    behavior: "smooth",
+    window.scrollTo({
+      top: e.pageY,
+      left: 0,
+      behavior: "smooth",
+    });
   });
 }
 
-function appendLiItemMarkup(hits) {
+function appendHitsMarkup(hits) {
   refs.gallery.insertAdjacentHTML("beforeend", hitsTbs(hits));
 }
 
